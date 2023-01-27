@@ -59,6 +59,7 @@
       gpd-pocket-3 = import ./gpd/pocket-3;
       hp-elitebook-2560p = import ./hp/elitebook/2560p;
       intel-nuc-8i7beh = import ./intel/nuc/8i7beh;
+      imx8qm-mek = import ./nxp/imx8qm-mek;
       lenovo-ideapad-15arh05 = import ./lenovo/ideapad/15arh05;
       lenovo-ideapad-z510 = import ./lenovo/ideapad/z510;
       lenovo-legion-15ach6 = import ./lenovo/legion/15ach6;

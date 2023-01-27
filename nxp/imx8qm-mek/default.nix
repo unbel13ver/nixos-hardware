@@ -10,11 +10,19 @@
 
   boot.kernelPackages = pkgs.linuxPackagesFor pkgs.linux_imx8;
 
-  boot.loader = {
-    grub.enable = lib.mkDefault false;
-    # Enables the generation of /boot/extlinux/extlinux.conf.
-    generic-extlinux-compatible.enable = lib.mkDefault true;
+  boot.loader.grub = {
+    enable = lib.mkDefault true;
+    extraFiles = {
+      "imx8qm-mek-hdmi.dtb" = "${pkgs.linux_imx8}/dtbs/freescale/imx8qm-mek-hdmi.dtb";
+    };
   };
 
-  hardware.deviceTree.filter = "imx8qm-*.dtb";
+  disabledModules = [ "profiles/all-hardware.nix" ];
+  boot.initrd.includeDefaultModules = lib.mkForce false;
+
+  hardware.deviceTree = {
+    enable = true;
+    filter = "imx8qm-*.dtb";
+    name = "imx8qm-mek-hdmi.dtb";
+  };
 }
