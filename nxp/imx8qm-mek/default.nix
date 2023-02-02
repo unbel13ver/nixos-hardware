@@ -9,6 +9,7 @@
   nixpkgs.hostPlatform = "aarch64-linux";
 
   boot.kernelPackages = pkgs.linuxPackagesFor pkgs.linux_imx8;
+  boot.kernelParams = [ "console=ttyLP0,115200n8" ];
 
   boot.loader.grub = {
     enable = lib.mkDefault true;
