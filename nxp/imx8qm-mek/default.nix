@@ -14,7 +14,7 @@
   boot.loader.grub = {
     enable = lib.mkDefault true;
     extraFiles = {
-      "imx8qm-mek-hdmi.dtb" = "${pkgs.linux_imx8}/dtbs/freescale/imx8qm-mek-hdmi.dtb";
+      "imx8qm-mek.dtb" = "${pkgs.linux_imx8}/dtbs/freescale/imx8qm-mek.dtb";
     };
   };
 
@@ -24,6 +24,6 @@
   hardware.deviceTree = {
     enable = true;
     filter = "imx8qm-*.dtb";
-    name = "imx8qm-mek-hdmi.dtb";
+    name = "imx8qm-mek.dtb";
   };
 }
